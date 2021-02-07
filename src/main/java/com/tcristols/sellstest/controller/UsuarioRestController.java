@@ -34,6 +34,14 @@ public class UsuarioRestController {
 		usuarioService.insertUsuario(usuario);
 	}
 	
+	@RequestMapping(value = "/rest/deleteAll", method = RequestMethod.DELETE)
+	public void deleteUsuarios() {
+		usuarioService.deleteAllUsuario();
+	}
 
+	@RequestMapping(value = "/rest/delete/{id}", method = RequestMethod.DELETE)
+	public void deleteUsuario(@PathVariable("id") Integer id) {
+		usuarioService.deleteUsuarioById(id);
+	}
 	
 }

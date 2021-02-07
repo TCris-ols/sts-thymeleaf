@@ -17,6 +17,7 @@ public interface UsuarioService {
 	void deleteAllUsuario();
 	void deleteUsuarioById(Integer id);
 	void updateUsuarioById(Integer id, Usuario usuario);
+	void updateUsuario(Usuario usuario);
 	void insertUsuario(Usuario usuario);
 
 }

@@ -44,6 +44,11 @@ public class UsuarioServiceImpl implements UsuarioService {
 	}
 
 	@Override
+	public void updateUsuario(Usuario usuario) {
+		usuarioRepository.save(usuario);
+	}
+	
+	@Override
 	public void insertUsuario(Usuario usuario) {
 		usuarioRepository.save(usuario);
 	}
