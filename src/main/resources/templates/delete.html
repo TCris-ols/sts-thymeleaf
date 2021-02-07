@@ -1,0 +1,21 @@
+<html>
+ <head>
+     <title>Deletar</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ </head>
+ <body>
+ <form action="/delete" method="POST" modelAttribute="usuario">
+ 
+ ID:<br>
+   <input type="text" name="id" th:value="${usuario.id}" readOnly="true"><br>
+   <br>
+   Nome usuario:<br>
+   <input type="text" name="name" th:value="${usuario.username}" readOnly="true"><br>
+   <br>
+   Email usuario:<br>
+   <input type="text" name="email" th:value="${usuario.senha}" readOnly="true"><br>
+   
+   <input type="submit" value="Deletar">
+ </form>
+ </body>
+</html>

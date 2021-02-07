@@ -1,0 +1,31 @@
+<html>
+ <head>
+ <title>CRUD Usuario</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+ <style>
+ table, th, td {
+   border: 1px solid black;
+   border-collapse: collapse;
+ }
+ </style>
+ </head>
+ <body>
+ <a href="insert">Inserir novo</a> | <a href="read">Ver todos</a> <br> <br>
+ <table style="width:100%">
+ <tr>
+     <th>ID</td>
+     <th>Login</td>
+     <th>Senha</td>
+     <th>Excluir?</td>
+     <th>Alterar?</td>
+ </tr>
+ <tr th:each="usuario : ${usuarios}">
+     <td th:text="${usuario.id}"></td>
+     <td th:text="${usuario.username}"></td>
+     <td th:text="${usuario.senha}"></td>
+     <td><a th:href="@{/delete(id=${usuario.id})}">Deletar</a></td>
+     <td><a th:href="@{/update(id=${usuario.id})}">Alterar</a></td>
+ </tr>
+ </table>
+ </body>
+</html>
