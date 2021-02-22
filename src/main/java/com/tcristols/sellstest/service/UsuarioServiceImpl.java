@@ -13,15 +13,12 @@ import com.tcristols.sellstest.repository.UsuarioRepository;
 public class UsuarioServiceImpl implements UsuarioService {
 	@Autowired
 	UsuarioRepository usuarioRepository;
+
 	
-	@Override
-	public Optional<Usuario> getUsuarioById(Integer id) {
-		return usuarioRepository.findById(id);
-	}
 
 	@Override
 	public List<Usuario> getAllUsuarios() {
-		return usuarioRepository.findAll();
+		return  (List<Usuario>) usuarioRepository.findAll();
 	}
 
 	@Override
@@ -30,17 +27,18 @@ public class UsuarioServiceImpl implements UsuarioService {
 		usuarioRepository.deleteAll();
 	}
 
-	@Override
-	public void deleteUsuarioById(Integer id) {
-		
-		usuarioRepository.deleteById(id);
-	}
 
 	@Override
-	public void updateUsuarioById(Integer id, Usuario usuario) {
-		Optional<Usuario> getUsuario = getUsuarioById(id);
-		getUsuario.get().setUsername(usuario.getUsername());	
+	public void updateUsuarioByLogin(String login, Usuario usuario) {
+		Optional<Usuario> getUsuario = getUsuarioByLogin(login);
+		getUsuario.get().setNomeCompleto(usuario.getNomeCompleto());	
 		getUsuario.get().setSenha(usuario.getSenha());
+	}
+
+
+	public Optional<Usuario> getUsuarioByLogin(String login) {
+		
+		return usuarioRepository.findByLogin(login);
 	}
 
 	@Override
@@ -53,4 +51,12 @@ public class UsuarioServiceImpl implements UsuarioService {
 		usuarioRepository.save(usuario);
 	}
 
+	@Override
+	public void deleteUsuarioByLogin(String login) {
+		usuarioRepository.deleteByLogin(login);
+		
+	}
+
+
+	
 }

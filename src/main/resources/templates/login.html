@@ -1,0 +1,43 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <title>Login</title>
+ <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/corecss.css}" />
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/navbar.css}" />
+  
+ </head>
+ <body>
+ <main>
+
+	
+	  <div>
+      <div class="bg-light p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+          <h1>Faça seu Login</h1>
+          <p>
+          <form  action="/logar" modelAtribute="usuario" method="GET" >
+	 
+		   Login:<br>
+		   <input  class="form-control" type="text" name="username">
+		   <br>
+		   Senha:<br>
+		   <input class="form-control" type="password" name="senha">
+		   <br>
+		   <input class="form-control::-webkit-input-placeholder" type="submit" value="Logar">
+		   </form>
+		   
+		  <br>
+ 	      
+           <!-- <a class="btn btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a> -->
+          </p>
+        </div>
+      </div>
+    </div>
+
+    </main>
+ </body>
+</html>
+

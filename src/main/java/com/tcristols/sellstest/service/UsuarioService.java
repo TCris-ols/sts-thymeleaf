@@ -10,13 +10,12 @@ import com.tcristols.sellstest.model.Usuario;
 @Service
 public interface UsuarioService {
 	
-	Optional<Usuario> getUsuarioById(Integer id);
-	
+	Optional<Usuario> getUsuarioByLogin(String login);
 	List<Usuario> getAllUsuarios();
 	
 	void deleteAllUsuario();
-	void deleteUsuarioById(Integer id);
-	void updateUsuarioById(Integer id, Usuario usuario);
+	void deleteUsuarioByLogin(String login);
+	void updateUsuarioByLogin(String login, Usuario usuario);
 	void updateUsuario(Usuario usuario);
 	void insertUsuario(Usuario usuario);
 

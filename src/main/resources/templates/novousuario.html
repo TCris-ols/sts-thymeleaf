@@ -1,0 +1,71 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Novo Usuário</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/corecss.css}" />
+<link rel="stylesheet" type="text/css" media="all"
+	th:href="@{/css/navbar.css}" />
+
+</head>
+<body>
+	<main>
+
+	<!-- 	<nav class="navbar navbar-expand-sm navbar-dark bg-dark" aria-label="">
+			<div class="container-fluid">
+				<a class="navbar-brand" href="#">SellsTest</a>
+				<button class="navbar-toggler" type="button"
+					data-bs-toggle="collapse" data-bs-target="#navbarsExample03"
+					aria-controls="navbarsExample03" aria-expanded="false"
+					aria-label="Toggle navigation">
+					<span class="navbar-toggler-icon"></span>
+				</button>
+
+				<div class="collapse navbar-collapse" id="navbarsExample03">
+					<ul class="navbar-nav me-auto mb-2 mb-sm-0">
+						<li class="nav-item active"><a class="nav-link"
+							aria-current="page" href="index">Home</a></li>
+						<li class="nav-item dropdown"><a
+							class="nav-link dropdown-toggle" href="#" id="dropdown03"
+							data-bs-toggle="dropdown" aria-expanded="false">Login</a>
+							<ul class="dropdown-menu" aria-labelledby="dropdown03">
+								<li><a class="dropdown-item" href="login">Login</a></li>
+								<li><a class="dropdown-item" href="novousuario">Cadastar Login</a></li>
+
+							</ul>
+						</li>
+					
+					</div>
+					<div>
+					<form>
+						<input class="form-control" type="text" placeholder="Search" aria-label="Search">
+					</form>
+				</div>
+			</div>
+		</nav> -->
+	  <div>
+   <div class="bg-light p-5 rounded">
+        <div class="col-sm-8 mx-auto">
+					<p>
+					<h1>Cadastrar novo usuário</h1>
+					<form action="/novousuario" modelAtribute="usuario" method="POST">
+						Login: <br> <input class="form-control" type="text"
+							name="login"> <br> Nome Completo: <br> 
+							<input class="form-control" type="text" name="nomeCompleto"> <br>
+						Senha: <br> 
+						<input class="form-control" type="password" name="senha"> <br> 
+						<input	class="form-control::-webkit-input-placeholder" type="submit" value="Criar Login">
+					</form>
+
+					<!--  <a class="btn btn-primary" href="../components/navbar/" role="button">View navbar docs &raquo;</a>-->
+					</p>
+
+			</div>
+		</div>
+	</main>
+</body>
+</html>
+

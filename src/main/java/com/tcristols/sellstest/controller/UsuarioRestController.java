@@ -9,7 +9,6 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.servlet.ModelAndView;
 
 import com.tcristols.sellstest.model.Usuario;
 import com.tcristols.sellstest.service.UsuarioService;
@@ -19,16 +18,19 @@ public class UsuarioRestController {
 
 	@Autowired
 	private UsuarioService usuarioService;
+
 	
 	@RequestMapping(value = "rest/getAll", method = RequestMethod.GET)
 	public List<Usuario> getUsuarios(){
 		return usuarioService.getAllUsuarios();
 	}
 	
-	@RequestMapping(value = "rest/get/{id}", method = RequestMethod.GET)
-	public Optional<Usuario> getUsuario(@PathVariable("id") Integer id){
-		return usuarioService.getUsuarioById(id);
+	@RequestMapping(value = "rest/get/{login}", method = RequestMethod.GET)
+	public Optional<Usuario> getUsuario(@PathVariable("login") String login){
+		return usuarioService.getUsuarioByLogin(login);
 	}
+	
+	
 	@RequestMapping(value = "rest/insert", method = RequestMethod.POST)
 	public void insertUsuario(@RequestBody Usuario usuario) {
 		usuarioService.insertUsuario(usuario);
@@ -40,8 +42,8 @@ public class UsuarioRestController {
 	}
 
 	@RequestMapping(value = "/rest/delete/{id}", method = RequestMethod.DELETE)
-	public void deleteUsuario(@PathVariable("id") Integer id) {
-		usuarioService.deleteUsuarioById(id);
+	public void deleteUsuario(@PathVariable("id") String id) {
+		usuarioService.deleteUsuarioByLogin(id);
 	}
 	
 }

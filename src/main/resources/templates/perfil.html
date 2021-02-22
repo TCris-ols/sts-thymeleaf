@@ -1,0 +1,16 @@
+<html>
+ <head>
+ <title>Perfil</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <link rel="stylesheet" type="text/css" media="all" th:href="@{/css/navbar.css}" />
+ </head>
+ <body  th:each="usuario : ${usuario}">
+
+ <span th:text="${'Olá!' + usuario.nomeCompleto}"></span>
+ <br>
+ <br>
+ <p>"Seu Login foi cadastrado com sucesso! Faça seu login agora."
+ <br>
+ <br>
+ </body>
+</html>
