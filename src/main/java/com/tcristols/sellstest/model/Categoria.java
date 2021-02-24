@@ -1,7 +1,5 @@
 package com.tcristols.sellstest.model;
 
-
-import java.io.Serializable;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,90 +7,48 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
-import javax.persistence.JoinColumn;
-import javax.persistence.JoinTable;
 import javax.persistence.ManyToMany;
+import javax.persistence.Table;
+
+import com.fasterxml.jackson.annotation.JsonIgnore;
 
 @Entity
-public class Produto implements Serializable {
-	
-	private static final long serialVersionUID = 1L;
+@Table(name = "categoria")
+public class Categoria {
 	
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private Integer id;
 	private String descricao;
-	private String codigo;
-	private Double preco;
-	
 
+	@JsonIgnore
+	@ManyToMany(mappedBy = "categorias")
+	private Set<Produto> produtos = new HashSet<>();
 	
-	@ManyToMany
-	@JoinTable(name = "produto_categoria", joinColumns = @JoinColumn(name = "produto_id"), inverseJoinColumns = @JoinColumn(name = "categoria_id"))
-	private Set<Categoria> categorias = new HashSet<>();
-
-	
-	
-	public Produto() {
+	public Categoria() {
 
 	}
 
-
-	public Produto(Integer id, String descricao, String codigo, Double preco, Set<Categoria> categorias) {
+	public Categoria(Integer id, String descricao) {
 		super();
 		this.id = id;
 		this.descricao = descricao;
-		this.codigo = codigo;
-		this.preco = preco;
-		this.categorias = categorias;
 	}
-
 
 	public Integer getId() {
 		return id;
 	}
 
-
 	public void setId(Integer id) {
 		this.id = id;
 	}
-
 
 	public String getDescricao() {
 		return descricao;
 	}
 
-
 	public void setDescricao(String descricao) {
 		this.descricao = descricao;
-	}
-
-	public String getCodigo() {
-		return codigo;
-	}
-
-
-	public Set<Categoria> getCategoria() {
-		return categorias;
-	}
-
-
-	public void setCodigo(String codigo) {
-		this.codigo = codigo;
-	}
-
-
-	public Double getPreco() {
-		return preco;
-	}
-
-
-	public void setPreco(Double preco) {
-		this.preco = preco;
-	}
-
-	public void setCategoria(Set<Categoria> categoria) {
-		this.categorias = categoria;
 	}
 
 	@Override
@@ -104,7 +60,6 @@ public class Produto implements Serializable {
 		return result;
 	}
 
-
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -113,7 +68,7 @@ public class Produto implements Serializable {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
+		Categoria other = (Categoria) obj;
 		if (descricao == null) {
 			if (other.descricao != null)
 				return false;
@@ -127,5 +82,5 @@ public class Produto implements Serializable {
 		return true;
 	}
 
-
+	
 }

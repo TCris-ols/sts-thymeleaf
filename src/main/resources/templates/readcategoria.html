@@ -1,0 +1,31 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+ <head>
+ <title>Categorias</title>
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/corecss.css}" />
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/navbar.css}" />
+     
+ </head>
+ <body >
+ 		<h2>Categorias</h2>
+		<table class="table table-striped" >
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Descrição</th>
+
+				</tr>
+			</thead>
+			<tbody th:each="categoria : ${categorias}" >
+				<tr>
+					<td><span th:text="${categoria.id}"></span></td>
+					<td><span th:text="${categoria.descricao}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+</body>
+</html>

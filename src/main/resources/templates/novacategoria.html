@@ -1,0 +1,30 @@
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org">
+<head>
+<title>Nova Categoria</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/corecss.css}" />
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/navbar.css}" />
+
+</head>
+<body>
+	<main>
+		<div>
+			<div class="bg-light p-5 rounded">
+				<div class="col-sm-8 mx-auto">
+					<p>
+					<h2>Cadastrar nova categoria</h2>
+					<form action="/novacategoria" modelAtribute="categoria" method="POST">
+						ID: <br> <input class="form-control" type="text" name="id" readOnly="true"> <br> 
+						Descrição: <br> <input	class="form-control" type="text" name="descricao"> <br>
+						<br> <input	class="form-control::-webkit-input-placeholder" type="submit" value="Criar categoria">
+					</form>
+				</p>
+				</div>
+			</div>
+	</main>
+</body>
+</html>
+

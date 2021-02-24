@@ -1,0 +1,26 @@
+<html>
+<head>
+<title>Categorias</title>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</head>
+<body th:each="categoria : ${categorias}>
+	<main>
+		<h2>Categorias</h2>
+		<table class="table table-striped" ">
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Descrição</th>
+
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span th:text="${'ID: ' + categoria.id}"></span></td>
+					<td><span th:text="${'Descrição: ' + categoria.descricao}"></span></td>
+				</tr>
+			</tbody>
+		</table>
+	</main>
+</body>
+</html>
