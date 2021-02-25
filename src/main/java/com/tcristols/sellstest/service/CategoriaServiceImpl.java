@@ -26,15 +26,15 @@ public class CategoriaServiceImpl implements CategoriaService {
 	}
 
 	@Override
-	public Optional<Categoria> getCategoriaById(Integer id) {
-		
-		return categoriaRepository.findById(id);
+	public Categoria getCategoriaById(Integer id) {
+		Optional<Categoria> cat = categoriaRepository.findById(id);
+		return cat.get();
 	}
 	
 	@Override
 	public void updateCategoriaById(Integer id, Categoria categoria) {
-		Optional<Categoria> getCategoria = getCategoriaById(id);
-		getCategoria.get().setDescricao(categoria.getDescricao());	
+		Categoria getCategoria = getCategoriaById(id);
+		getCategoria.setDescricao(categoria.getDescricao());	
 	
 	}
 

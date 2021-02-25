@@ -42,6 +42,8 @@
 	box-sizing: border-box
 }
 
+*{padding: 0; margin: 0; border: 0; box-sizing: border-box;}
+
 html {
 	font-family: sans-serif;
 	line-height: 1.15;
@@ -50,7 +52,11 @@ html {
 	-ms-overflow-style: scrollbar;
 	-webkit-tap-highlight-color: transparent
 }
-
+form
+.blocoicones{float: left; width: 30%; height:40px; margin:100px;border: 1px solid #dee2e6; border-radius: 5px; }
+	.blocoicones input [type='text']{float:left; width:80%; height: 100%; border: none; background: blue; padding: 0 10px;}
+	.blocoicones input [type='button']{float:left; width:80%; height: 100%; border: none; background: #ccc;}
+		
 -ms-viewport {
 	width: device-width
 }
@@ -3338,6 +3344,7 @@ bg-dark
 	align-items: center
 }
 
+thead
 .input-group>.custom-file:not(:last-child) .custom-file-label,
 	.input-group>.custom-file:not(:last-child) .custom-file-label::after {
 	border-top-right-radius: 0;
@@ -6237,6 +6244,7 @@ a.bg-dark:focus, a.bg-dark:hover, button.bg-dark:focus, button.bg-dark:hover
 	content: ""
 }
 
+ input
 .d-none {
 	display: none !important
 }
@@ -8669,7 +8677,8 @@ a.text-dark:focus, a.text-dark:hover {
 		page-break-inside: avoid
 	}
 	thead {
-		display: table-header-group
+		display: table-header-group;
+		background-color :  #8080c0;
 	}
 	img, tr {
 		page-break-inside: avoid

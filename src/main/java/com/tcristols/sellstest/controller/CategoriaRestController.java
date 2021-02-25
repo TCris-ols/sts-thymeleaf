@@ -26,7 +26,7 @@ public class CategoriaRestController {
 	}
 	
 	@RequestMapping(value = "rest/getCategoria/{id}", method = RequestMethod.GET)
-	public Optional<Categoria> getCategoria(@PathVariable("id") Integer id){
+	public Categoria getCategoria(@PathVariable("id") Integer id){
 		return categoriaService.getCategoriaById(id);
 	}
 	

@@ -11,7 +11,7 @@ import com.tcristols.sellstest.model.Categoria;
 @Service
 public interface CategoriaService {
 	
-	Optional<Categoria> getCategoriaById(Integer id);
+	Categoria getCategoriaById(Integer id);
 	List<Categoria> getAllCategorias();
 	
 	void deleteAllCategorias();

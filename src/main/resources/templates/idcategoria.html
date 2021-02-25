@@ -11,21 +11,16 @@
 
 </head>
 <body>
+
 		<h2>Categorias</h2>
 
-
-	<div class="blocoicones">
-		<form action="/readcategoria"  method = "POST">
-				<input class="form-control"  type="text" name="id" placeholder="Localize a categoria">
-			 	<input	class="form-control::-webkit-input-placeholder" type="submit" value="Buscar">
-		</form>
-	</div>
 	<div>
 	<table class="table table-striped">
 		<thead class="table-header-group">
 			<tr>
 				<th>Id</th>
 				<th>Descrição</th>
+
 			</tr>
 		</thead>
 		<tbody th:each="categoria : ${categorias}">

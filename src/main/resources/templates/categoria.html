@@ -1,26 +1,64 @@
 <html>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+
+
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/corecss.css}" />
+<link rel="stylesheet" type="text/css" media="all" th:href="@{/css/navbar.css}" />
 <head>
 <title>Categorias</title>
 <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 </head>
-<body th:each="categoria : ${categorias}>
+<body>
+
 	<main>
 		<h2>Categorias</h2>
-		<table class="table table-striped" ">
-			<thead>
-				<tr>
-					<th>ID</th>
-					<th>Descrição</th>
-
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td><span th:text="${'ID: ' + categoria.id}"></span></td>
-					<td><span th:text="${'Descrição: ' + categoria.descricao}"></span></td>
-				</tr>
-			</tbody>
-		</table>
+		<div>
+			<div class="bg-light p-5 rounded">
+				<div class="col-sm-8 mx-auto">
+					<p>
+					<form action="/novacategoria" modelAtribute="categoria" method="POST">
+						ID: <br> <input class="form-control" type="text" name="id" readOnly="true"> <br> 
+						Descrição: <br> <input	class="form-control" type="text" name="descricao"> <br>
+						<br>
+						<!-- <input class="form-control::-webkit-input-placeholder" type="submit" value="Salvar"> -->
+						<button type="submit">Salvar</button>
+					</form>
+				</p>
+				</div>
+			</div>
+			
+			<div class="blocoicones">
+		<form action="/categoriaid"  method = "POST">
+				<input class="form-control"  type="text" name="id" placeholder="Localize a categoria">
+			 	<input	class="form-control::-webkit-input-placeholder" type="submit" value="Buscar">
+		</form>
+		
+	</div>
+	<br><br>
+	<div>
+	<div class="blocoicones">
+		<form action="/allcategorias"  method = "GET">
+			 	<input	class="form-control::-webkit-input-placeholder" type="submit" value="Listar Categorias">
+		</form>
+		<br>
+		<table class="table table-striped">
+		<thead class="table-header-group">
+			<tr>
+				<th>Id</th>
+				<th>Descrição</th>
+			</tr>
+		</thead>
+		<tbody th:each="categoria : ${categorias}">
+			<tr>
+				<td><span th:text="${categoria.id}"></span></td>
+				<td><span th:text="${categoria.descricao}"></span></td>
+			</tr>
+		</tbody>
+	</table>
+	</div>
+	
+	
 	</main>
 </body>
 </html>
